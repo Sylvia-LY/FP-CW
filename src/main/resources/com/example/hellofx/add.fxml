@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hellofx.addController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane layoutX="29.0" layoutY="14.0" prefHeight="268.0" prefWidth="438.0">
+               <children>
+                  <TextField fx:id="addStudentNumberBox" layoutX="30.0" layoutY="20.0" prefWidth="125.0" promptText="Student Number" />
+                  <TextField fx:id="addGivenNameBox" layoutX="30.0" layoutY="60.0" prefWidth="125.0" promptText="Given Name" />
+                  <TextField fx:id="addFamilyNameBox" layoutX="30.0" layoutY="100.0" prefWidth="125.0" promptText="Family Name" />
+                  <DatePicker fx:id="addDateOfBirthPicker" layoutX="290.0" layoutY="20.0" prefWidth="125.0" promptText="Date Of Birth" />
+                  <TextField fx:id="addEmailBox" layoutX="30.0" layoutY="140.0" prefWidth="125.0" promptText="Email" />
+                  <ComboBox fx:id="addCourseTypeComboBox" layoutX="30.0" layoutY="180.0" prefWidth="125.0" promptText="Course Type" />
+                  <DatePicker fx:id="addDateOfEntryPicker" layoutX="290.0" layoutY="60.0" prefWidth="125.0" promptText="Date Of Entry" />
+                  <ComboBox fx:id="addModeOfStudyComboBox" layoutX="290.0" layoutY="100.0" prefWidth="125.0" promptText="Mode Of Study" />
+                  <Button fx:id="moduleMarkBtn" layoutX="165.0" layoutY="225.0" mnemonicParsing="false" onMouseClicked="#addModuleMark" text="Module Mark" />
+                  <ComboBox fx:id="addLevelComboBox" layoutX="30.0" layoutY="225.0" prefWidth="125.0" promptText="Level" />
+                  <ComboBox fx:id="addHasDebtsComboBox" layoutX="290.0" layoutY="180.0" prefWidth="125.0" promptText="Has Debts" />
+                  <ComboBox fx:id="addHasEnrolledComboBox" layoutX="290.0" layoutY="140.0" prefWidth="125.0" promptText="Has Enrolled" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="clearBtn" layoutX="354.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#setClearBtn" text="Clear" />
+            <Button fx:id="addBtn" layoutX="406.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#setAddBtn" text="Add" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

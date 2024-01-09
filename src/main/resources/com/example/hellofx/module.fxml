@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hellofx.ModuleController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane prefHeight="400.0" prefWidth="850.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <center>
+                  <AnchorPane prefHeight="400.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="114.0" prefHeight="400.0" prefWidth="494.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TableView fx:id="moduleStudentTable" layoutX="3.0" layoutY="25.0" prefHeight="230.0" prefWidth="475.0">
+                                <columns>
+                                  <TableColumn fx:id="studentColStudentNumber" prefWidth="55.0" text="Student#" />
+                                  <TableColumn fx:id="studentColGivenName" prefWidth="75.0" text="Given Name" />
+                                    <TableColumn fx:id="studentColFamilyName" text="Family Name" />
+                                    <TableColumn fx:id="studentColCourseType" prefWidth="75.0" text="Course Type" />
+                                    <TableColumn fx:id="studentColMark" prefWidth="55.0" text="Mark" />
+                                    <TableColumn fx:id="studentColHasPassed" prefWidth="70.0" text="Has Passed" />
+                                    <TableColumn fx:id="studentColCredit" prefWidth="55.0" text="Credit" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <AnchorPane layoutY="265.0" prefHeight="105.0" prefWidth="185.0">
+                                 <children>
+                                    <ComboBox fx:id="moduleCourseTypeComboBox" layoutX="97.0" layoutY="2.0" onAction="#studentTableCourseType" prefWidth="75.0" />
+                                    <Label layoutX="25.0" layoutY="5.0" text="Course Type: " />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="180.0" layoutY="270.0" prefHeight="100.0" prefWidth="288.0">
+                                 <children>
+                                    <RadioButton fx:id="moduleBelowAverageRadio" layoutX="155.0" layoutY="60.0" mnemonicParsing="false" onAction="#studentTableRadio" text="Below Average">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="studentTableToggleGroup" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="moduleAllRadio" layoutX="45.0" mnemonicParsing="false" onAction="#studentTableRadio" selected="true" text="All" toggleGroup="$studentTableToggleGroup" />
+                                    <RadioButton fx:id="modulePassedRadio" layoutX="45.0" layoutY="30.0" mnemonicParsing="false" onAction="#studentTableRadio" text="Passed" toggleGroup="$studentTableToggleGroup" />
+                                    <RadioButton fx:id="moduleFailedRadio" layoutX="45.0" layoutY="60.0" mnemonicParsing="false" onAction="#studentTableRadio" text="Failed" toggleGroup="$studentTableToggleGroup" />
+                                    <RadioButton fx:id="moduleAboveAverageRadio" layoutX="155.0" layoutY="30.0" mnemonicParsing="false" onAction="#studentTableRadio" text="Above Average" toggleGroup="$studentTableToggleGroup" />
+                                    <Separator layoutX="-3.0" layoutY="-11.0" orientation="VERTICAL" prefHeight="100.0" />
+                                 </children>
+                              </AnchorPane>
+                              <Separator orientation="VERTICAL" prefHeight="400.0" />
+                              <Label fx:id="moduleStudentsLabel" layoutX="4.0" layoutY="8.0" text="0 Student(s)" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+               <left>
+                  <AnchorPane prefHeight="400.0" prefWidth="420.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="400.0" prefWidth="370.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TableView fx:id="allModulesTable" layoutX="3.0" layoutY="55.0" onMouseClicked="#allModulesTableSelect" prefHeight="170.0" prefWidth="415.0">
+                                <columns>
+                                  <TableColumn fx:id="allModulesColModuleNumber" prefWidth="30.0" text="Module#" />
+                                  <TableColumn fx:id="allModulesColModuleName" prefWidth="65.0" text="Module Name" />
+                                    <TableColumn fx:id="allModulesColLevel" prefWidth="20.0" text="Level" />
+                                    <TableColumn fx:id="allModulesColCreditValue" prefWidth="40.0" text="Credit Value" />
+                                    <TableColumn fx:id="allModulesColThresholdMark" prefWidth="45.0" text="Threshold Mark" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <AnchorPane layoutY="240.0" prefHeight="138.0" prefWidth="192.0">
+                                 <children>
+                                    <Label fx:id="modulePassRateLabel" layoutX="15.0" layoutY="10.0" text="Pass Rate(%): 0" />
+                                    <Label fx:id="moduleAverageMarkLabel" layoutX="15.0" layoutY="40.0" text="Average Mark: 0" />
+                                    <Label fx:id="moduleMaxLabel" layoutX="15.0" layoutY="70.0" text="Max: 0" />
+                                    <Label fx:id="moduleMinLabel" layoutX="15.0" layoutY="100.0" text="Min: 0" />
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="4.0" layoutY="38.0" text="Module List" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
